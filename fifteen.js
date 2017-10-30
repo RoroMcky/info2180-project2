@@ -183,19 +183,19 @@ $(document).ready(function(){
     
    
     function RBg(){
-        var rand = Math.floor(Math.random() * 8);
+        var rand = Math.floor(Math.random() * 3);
         var $board = $('#puzzlearea');
     
         switch(rand)
         {
             case 0:
-                  $pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/inuyasha.jpg)'});
+                  $pa.css({'background-image':'background.jpg'});
                 break;
             case 1:
-                 $pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/background.jpg)'});
+                 $pa.css({'background-image':'inuyasha.jpg'});
                 break;
             default:
-                $pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/lelouch.jpg)'});    
+                $pa.css({'background-image':'lelouch.jpg'});    
         }
     }
 
