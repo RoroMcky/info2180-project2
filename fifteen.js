@@ -1,4 +1,4 @@
-$(document).ready(function()){
+$(document).ready(function(){
 	var $pa = $('#puzzlearea').children();
 
 	var $controls = $('#controls').children();
@@ -147,7 +147,26 @@ function shuffle()
 }
 function background()
 {
-	
+	var rand = Math.floor(Math.random()*8);
+	var $pb = $('#pa');
+
+	switch(rand)
+	{
+		case 0:
+		$pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/background.jpg)'});
+		break;
+
+		case 1: 
+		$pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/lelouch.jpg)'});
+		break;
+		default:
+		$pa.css({'background-image':'url(https://github.com/RoroMcky/info2180-project2/blob/master/inuyasha.jpg)'});
+
+		setPuzzle();
+		$pa.hover(ifcanmove);
+		$pa.click(movepiece);
+		$('#shuffbutt').click(shuffle);
+
+	}
 }
 
-}
