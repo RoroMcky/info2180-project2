@@ -1,9 +1,12 @@
+//620086629
+//Rushell McKenzie 
+
 $(document).ready(function(){
-    
-    
+        
     var $pa = $('#puzzlearea').children();
-    
-    
+
+//variable declarations
+
     var topp = 0;
     var leftt = 0;
     var rows = 0;
@@ -16,11 +19,11 @@ $(document).ready(function(){
    
     var count = 0;
 
-    function BP(pos1,pos2){
+    var BP=function(pos1,pos2){
         return ('' + pos1 + 'px' + ' ' + pos2 + 'px')
     }
     
-    function order(){
+   var order = function(){
         $pa.addClass('puzzlepiece');
         
         $pa.each(function(){
@@ -94,7 +97,7 @@ $(document).ready(function(){
         });
     }
 
-    function canmove(obj){
+    var canmove=function(obj){
     
          if(obj.position().top == (emp1 + 100)  || obj.position().top == (emp1 - 100))
          {
@@ -113,14 +116,14 @@ $(document).ready(function(){
          }
     }
     
-    function indicateMovable(){
+    var ifcanmove=function(){
         
        if(canmove($(this))){
              $(this).addClass('movablepiece');
           }
     }
 
-    function movePiece()
+    var movePiece=function()
     {
         var TempX = 0;
         var TempY = 0;
@@ -142,7 +145,7 @@ $(document).ready(function(){
             $(this).css({top: moveTop,left: moveLeft }); 
         }
     } 
-    function shuffle(){
+    var shuffle=function(){
         var rand = Math.floor(Math.random() * 15);
 
         var obj = $pa[rand];
@@ -182,8 +185,8 @@ $(document).ready(function(){
     
     
    
-    function RBg(){
-        var rand = Math.floor(Math.random() * 3);
+    var RBg=function(){
+        var rand = Math.floor(Math.random() * 2);
         var $board = $('#puzzlearea');
     
         switch(rand)
@@ -191,11 +194,8 @@ $(document).ready(function(){
             case 0:
                   $pa.css({'background-image':'background.jpg'});
                 break;
-            case 1:
-                 $pa.css({'background-image':'inuyasha.jpg'});
-                break;
             default:
-                $pa.css({'background-image':'lelouch.jpg'});    
+                $pa.css({'background-image':'background2.jpg'});    
         }
     }
 
@@ -204,7 +204,7 @@ $(document).ready(function(){
    
     RBg();
      
-    $pa.hover(indicateMovable);
+    $pa.hover(ifcanmove);
    
     $pa.click(movePiece);
 
