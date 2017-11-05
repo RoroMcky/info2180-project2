@@ -146,7 +146,7 @@ $(document).ready(function(){
         }
     } 
     var RBg=function(){
-        var rand = Math.floor(Math.random() * 2);
+        var rand = Math.floor(Math.random() * 4);
         var $board = $('#puzzlearea');
     
         switch(rand)
@@ -154,6 +154,12 @@ $(document).ready(function(){
             case 0:
                   $pa.css({'background-image':'background.jpg'});
                 break;
+	    case 1:
+		  $pa.css({'background-image':'background3.jpg'});
+		break;
+	    case 2:
+		  $pa.css({'background-image':'background4.jpg'});
+		break;
             default:
                   $pa.css({'background-image':'background2.jpg'});    
         }
