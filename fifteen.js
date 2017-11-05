@@ -145,6 +145,19 @@ $(document).ready(function(){
             $(this).css({top: moveTop,left: moveLeft }); 
         }
     } 
+    var RBg=function(){
+        var rand = Math.floor(Math.random() * 2);
+        var $board = $('#puzzlearea');
+    
+        switch(rand)
+        {
+            case 0:
+                  $pa.css({'background-image':'background.jpg'});
+                break;
+            default:
+                  $pa.css({'background-image':'background2.jpg'});    
+        }
+    }
     var shuffle=function(){
         var rand = Math.floor(Math.random() * 15);
 
@@ -181,27 +194,10 @@ $(document).ready(function(){
             shuffle();
         }
         
-    }
-    
-    
-   
-    var RBg=function(){
-        var rand = Math.floor(Math.random() * 2);
-        var $board = $('#puzzlearea');
-    
-        switch(rand)
-        {
-            case 0:
-                  $pa.css({'background-image':'background.jpg'});
-                break;
-            default:
-                $pa.css({'background-image':'background2.jpg'});    
-        }
-    }
+    }  
 
     order();
     
-   
     RBg();
      
     $pa.hover(ifcanmove);
